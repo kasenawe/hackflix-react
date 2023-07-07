@@ -4,9 +4,7 @@ function Header() {
   return (
     <div className="col-12 headerContainer">
       <div className="col-12 headerOpa">
-        <h3 className="headerText">
-          Tus peliculas favoritas en un solo lugar!
-        </h3>
+        <h3 className="headerText">Welcome</h3>
       </div>
     </div>
   );

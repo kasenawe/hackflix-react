@@ -1,11 +1,11 @@
-import "./Filter.css";
+import "./Home.css";
 
 import React, { useState } from "react";
-import Header from "./Header";
-import Movies from "./Movies";
+import Header from "../components/Header";
+import Movies from "../components/Movies";
 import { Rate, ConfigProvider, theme } from "antd";
 
-function Filter(movie) {
+function Home(movie) {
   const [value, setValue] = useState(0);
   const filterValue = value;
 
@@ -15,7 +15,7 @@ function Filter(movie) {
     <>
       <Header />
       <div className="col-12 text-center filterContainer border-bottom">
-        <p className="filterText">Filtrar por rating</p>
+        <p className="filterText">Rating</p>
         <span>
           <ConfigProvider
             theme={{
@@ -33,4 +33,4 @@ function Filter(movie) {
   );
 }
 
-export default Filter;
+export default Home;

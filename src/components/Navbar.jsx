@@ -14,13 +14,17 @@ function Navbar() {
               className="d-inline-block align-text-top me-3"
             ></img>
           </a>
-
-          <a className="navbar-brand navbarText " href="/contacto">
-            <h3>Contacto</h3>
-          </a>
-          <a className="navbar-brand navbarText" href="/sobre-nosotros">
-            <h3>Sobre nosotros</h3>
-          </a>
+          <div className="d-flex gap-4">
+            <a className="navbar-brand navbarText " href="/search">
+              <h3>Search</h3>
+            </a>
+            <a className="navbar-brand navbarText " href="/contact">
+              <h3>Contact</h3>
+            </a>
+            <a className="navbar-brand navbarText" href="/about-us">
+              <h3>About</h3>
+            </a>
+          </div>
         </div>
       </nav>
     </div>

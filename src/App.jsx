@@ -1,9 +1,9 @@
 import { useState } from "react";
-import HaRoutes from "./components/Routes";
+import Router from "./components/Router";
 
 import Navbar from "./components/Navbar";
 
-import Filter from "./components/Filter";
+import Filter from "./Pages/Home";
 import Header from "./components/Header";
 
 import "./App.css";
@@ -12,7 +12,7 @@ function App(movie) {
   return (
     <>
       <Navbar />
-      <HaRoutes />
+      <Router />
     </>
   );
 }

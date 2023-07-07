@@ -3,7 +3,7 @@ import axios from "axios";
 import { BottomScrollListener } from "react-bottom-scroll-listener";
 import { RotatingLines } from "react-loader-spinner";
 
-import rate from "./Filter";
+import rate from "../Pages/Home";
 import Movie from "./Movie";
 
 import "./Movies.css";

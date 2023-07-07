@@ -24,9 +24,11 @@ function MovieModal({ show, setShow, movie }) {
           src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
           className="modalImg"
         ></img>
-        <p>{movie.overview}</p>
+        <div className="d-flex flex-column justify-content-between">
+          <p>{movie.overview}</p>
 
-        <NavLink to={`/pelicula/${movie.id}`}>Mas Info</NavLink>
+          <NavLink to={`/movie/${movie.id}`}>More Info</NavLink>
+        </div>
       </Modal.Body>
     </Modal>
   );
