@@ -1,0 +1,17 @@
+.movieImg {
+  width: 100%;
+}
+
+.movieHovered {
+  transform: scale(1.05); /* Aumenta el tamaño de la imagen en un 10% */
+  /* Otros estilos que desees aplicar al contenedor mientras el mouse está sobre la imagen */
+}
+
+.movieText {
+  color: white;
+}
+
+span {
+  position: relative;
+  z-index: 5000;
+}

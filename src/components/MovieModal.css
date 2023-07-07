@@ -1,0 +1,18 @@
+.modalFormat {
+  z-index: 9999;
+  backdrop-filter: blur(3px);
+}
+
+.modalImg {
+  height: 500px;
+  margin-right: 20px;
+}
+
+.modalBody {
+  display: flex;
+  color: aliceblue;
+}
+
+.modalHeader {
+  background-color: rgb(221, 158, 0);
+}

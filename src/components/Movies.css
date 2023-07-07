@@ -1,0 +1,9 @@
+.emptyMovies {
+  min-height: 100vh;
+}
+
+.pEmpty {
+  color: white;
+  margin-top: 150px;
+  font-size: 3rem;
+}

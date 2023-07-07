@@ -1,0 +1,11 @@
+.filterContainer {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: sticky;
+  top: 88px;
+  z-index: 100;
+}
+
+.filterText {
+  color: white;
+  font-size: 2rem;
+}
