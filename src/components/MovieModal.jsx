@@ -25,6 +25,7 @@ function MovieModal({ show, setShow, movie }) {
           className="modalImg"
         ></img>
         <div className="d-flex flex-column justify-content-between">
+          <p>Overview:</p>
           <p>{movie.overview}</p>
 
           <NavLink to={`/movie/${movie.id}`}>More Info</NavLink>
