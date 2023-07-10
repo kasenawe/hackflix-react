@@ -31,7 +31,7 @@ function MovieDetails() {
 
   if (isLoading) {
     return (
-      <div className="vh-100 d-flex flex-column align-items-center justify-content-center bg-dark">
+      <div className="d-flex flex-column align-items-center justify-content-center bg-dark">
         <h3 className="headerText">Loading</h3>
         <RotatingLines
           strokeColor="grey"
@@ -46,20 +46,38 @@ function MovieDetails() {
   return (
     <>
       {movieDetails ? (
-        <div className="vh-100 d-flex flex-column align-items-center  bg-dark mt-5">
-          <h1 className="detailsText">{movieDetails.title}</h1>
-          <div className="d-flex flex-row align-items-center mx-5">
-            <img
-              src={`https://image.tmdb.org/t/p/w500/${movieDetails.poster_path}`}
-              alt={`Imagen de ${movieDetails.title}`}
-              className="me-5"
-            />
-            <p className="overview">{movieDetails.overview}</p>
-            <p className="overview">{movieDetails.release_date}</p>
+        <div className="container m-auto vh-100 d-flex align-items-center pt-5">
+          <div className="row d-flex align-items-center h-75 py-auto ">
+            <div className="col-lg-4">
+              <img
+                src={`https://image.tmdb.org/t/p/w500/${movieDetails.poster_path}`}
+                alt={`Imagen de ${movieDetails.title}`}
+                className="details-img me-5"
+              />
+            </div>
+            <div className="col-lg-8">
+              <h1 className="detailsText">{movieDetails.title}</h1>
+              <p className="overview">
+                {" "}
+                {movieDetails.release_date.slice(0, 4)}
+              </p>
+              <p className="overview">{movieDetails.overview}</p>
+              <div className="d-flex flex-row gap-2">
+                {movieDetails.genres.map((genre, index) => (
+                  <React.Fragment key={genre.id}>
+                    <p className="overview">
+                      {genre.name}
+                      {index !== movieDetails.genres.length - 1 &&
+                        (index !== movieDetails.genres.length - 2 ? "," : " &")}
+                    </p>
+                  </React.Fragment>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       ) : (
-        <div className="vh-100 d-flex flex-column align-items-center justify-content-center bg-dark">
+        <div className="d-flex flex-column align-items-center justify-content-center bg-dark">
           <h3 className="headerText">No existe esta pelicula :(</h3>
         </div>
       )}

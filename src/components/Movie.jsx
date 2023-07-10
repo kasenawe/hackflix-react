@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import { Rate } from "antd";
 import MovieModal from "./MovieModal";
+import { Rate, ConfigProvider, theme } from "antd";
 import "./Movie.css";
 
 function Movie({ movie, onClick }) {
   const [isHovered, setIsHovered] = useState(false);
   const [show, setShow] = useState(false);
-  //console.log(show);
 
   const handleMouseOver = () => {
     setIsHovered(true);
@@ -28,13 +27,15 @@ function Movie({ movie, onClick }) {
       />
       <span>
         <Rate
+          theme={{
+            algorithm: theme.darkAlgorithm,
+          }}
           disabled
           defaultValue={2}
           value={Math.round(movie.vote_average / 2)}
-          className="mt-2"
         />
       </span>
-      <span className="movieText">{movie.vote_average}</span>
+      <span className="movieText"></span>
       <MovieModal show={show} setShow={setShow} movie={movie} />
     </div>
   );

@@ -52,7 +52,7 @@ function Movies({ filterValue }) {
 
   if (isLoading) {
     return (
-      <div className="vh-100 d-flex flex-column align-items-center  bg-dark">
+      <div className="vh-100 d-flex flex-column align-items-center bg-dark">
         <h3 className="headerText">Loading</h3>
         <RotatingLines
           strokeColor="grey"

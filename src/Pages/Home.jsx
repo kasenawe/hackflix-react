@@ -10,6 +10,7 @@ function Home(movie) {
   const filterValue = value;
 
   const desc = ["terrible", "bad", "normal", "good", "wonderful"];
+  console.log(movie);
 
   return (
     <>

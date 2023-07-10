@@ -1,5 +1,6 @@
 .movieImg {
   width: 100%;
+  transition: transform 0.3s ease;
 }
 
 .movieHovered {
@@ -9,9 +10,4 @@
 
 .movieText {
   color: white;
-}
-
-span {
-  position: relative;
-  z-index: 5000;
 }

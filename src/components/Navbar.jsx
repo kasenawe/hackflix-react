@@ -16,7 +16,7 @@ function Navbar() {
           </a>
           <div className="d-flex gap-4">
             <a className="navbar-brand navbarText " href="/search">
-              <h3>Search</h3>
+              <i class="bi bi-search text-white"></i>
             </a>
             <a className="navbar-brand navbarText " href="/contact">
               <h3>Contact</h3>
