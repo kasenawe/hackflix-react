@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 function Navbar() {
@@ -5,7 +6,7 @@ function Navbar() {
     <div>
       <nav className="navbar bg-dark border-bottom">
         <div className="container-fluid d-flex justify-content-between">
-          <a className="navbar-brand" href="/">
+          <Link to="/" className="navbar-brand">
             <img
               src="/img/hackflix-logo-trans.png"
               alt="Logo"
@@ -13,17 +14,17 @@ function Navbar() {
               height="100%"
               className="d-inline-block align-text-top me-3"
             ></img>
-          </a>
+          </Link>
           <div className="d-flex gap-4">
-            <a className="navbar-brand navbarText " href="/search">
+            <Link to="/search" className="navbar-brand navbarText">
               <i class="bi bi-search text-white"></i>
-            </a>
-            <a className="navbar-brand navbarText " href="/contact">
+            </Link>
+            <Link to="/contact" className="navbar-brand navbarText">
               <h3>Contact</h3>
-            </a>
-            <a className="navbar-brand navbarText" href="/about-us">
+            </Link>
+            <Link to="/about-us" className="navbar-brand navbarText">
               <h3>About</h3>
-            </a>
+            </Link>
           </div>
         </div>
       </nav>
