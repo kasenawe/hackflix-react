@@ -16,7 +16,7 @@ function Movie({ movie, onClick }) {
   };
 
   return (
-    <div className="col-6 col-md-4 col-lg-3text-center">
+    <div className="col-6 col-md-4 col-lg-3 text-center">
       <img
         src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
         alt=""
