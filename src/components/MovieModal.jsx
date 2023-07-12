@@ -33,9 +33,9 @@ function MovieModal({ show, setShow, movie }) {
           </div>
 
           <div className="col-12 col-md-8 d-flex flex-column justify-content-between">
-            {console.log(movie)}
             <div className="mt-5">
-              <p>{movie.release_date.slice(0, 4)}</p>
+              {movie.release_date && <p>{movie.release_date.slice(0, 4)}</p>}
+
               <p>{movie.overview.slice(0, 200) + "..."}</p>
             </div>
 

@@ -16,7 +16,6 @@ function Search() {
           `https://api.themoviedb.org/3/search/movie?api_key=73927ca11726d859c91ed5f93b34f84d&query=${inputValue}`
         );
         setMoviesData(response.data.results);
-        console.log(response.data);
       } catch (error) {
         setMoviesData(null);
       } finally {

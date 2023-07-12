@@ -18,7 +18,6 @@ function MovieDetails() {
         );
 
         setMovieDetails(response.data);
-        console.log(response);
       } catch (error) {
         setMovieDetails(null);
       } finally {

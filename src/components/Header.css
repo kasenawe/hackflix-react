@@ -1,15 +1,12 @@
 .headerContainer {
-  margin-top: 87px;
-  background-image: url("../../public/img/Braveheart-MagaZinema-1.jpg");
-
-  height: 400px;
+  height: auto;
   position: relative;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 .headerOpa {
   height: 400px;
+
   position: relative;
   display: flex;
   justify-content: center;
@@ -23,12 +20,15 @@
   padding: 10px;
 }
 
-/*
-.headerImg {
-  height: 600px;
-  width: 100%;
-  object-fit: cover;
-  margin-top: 87px;
-  opacity: 0.5;
+.carousel-format {
+  display: flex;
+  justify-content: center;
+  overflow: hidden; /* Evita que la imagen se desborde del contenedor */
 }
-*/
+
+.carousel-img {
+  max-width: 100%;
+  height: auto;
+  max-height: 630px;
+  object-fit: contain;
+}

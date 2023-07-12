@@ -10,13 +10,20 @@ function Home(movie) {
   const filterValue = value;
 
   const desc = ["terrible", "bad", "normal", "good", "wonderful"];
-  console.log(movie);
+
+  const handleOnClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <>
       <Header />
-      <div className="col-12 text-center filterContainer border-bottom">
+      <div className="col-12 text-center filter-container border-bottom ">
         <p className="filterText">Rating</p>
+
         <span>
           <ConfigProvider
             theme={{
@@ -29,6 +36,12 @@ function Home(movie) {
       </div>
       <div>
         <Movies filterValue={filterValue} />
+      </div>
+      <div className="footer d-flex justify-content-end">
+        <i
+          className="bi bi-caret-up-square-fill text-white me-4 mb-3 button-up"
+          onClick={handleOnClick}
+        ></i>
       </div>
     </>
   );
