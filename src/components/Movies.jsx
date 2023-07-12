@@ -89,7 +89,7 @@ function Movies({ filterValue }) {
   } else {
     return (
       filterValue > 0 && (
-        <div className="bg-dark text-center emptyMovies">
+        <div className="text-center emptyMovies">
           <p className="pEmpty">No hay peliculas con este rating</p>
         </div>
       )

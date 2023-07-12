@@ -61,7 +61,7 @@ function Header() {
 
   return (
     <div className="col-12 headerContainer">
-      <Carousel className="carousel-format">
+      <Carousel>
         {headerMovies.map((movie) => (
           <Carousel.Item key={movie.id}>
             <img

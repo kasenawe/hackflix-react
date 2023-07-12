@@ -1,9 +1,12 @@
 .headerContainer {
-  height: auto;
   position: relative;
+  margin-top: 67px;
   display: flex;
   justify-content: center;
+  overflow: hidden;
+  max-height: calc(100vh - 67px); /* Agrega esta línea */
 }
+
 .headerOpa {
   height: 400px;
 
@@ -20,15 +23,36 @@
   padding: 10px;
 }
 
-.carousel-format {
-  display: flex;
-  justify-content: center;
-  overflow: hidden; /* Evita que la imagen se desborde del contenedor */
-}
-
 .carousel-img {
   max-width: 100%;
-  height: auto;
-  max-height: 630px;
-  object-fit: contain;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+}
+.carousel-caption h3 {
+  position: absolute;
+  bottom: 60px;
+  left: 50px;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .carousel-caption h3 {
+    bottom: 100px; /* Ajusta el valor según tus necesidades */
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1199px) {
+  .carousel-caption h3 {
+    bottom: 200px; /* Ajusta el valor según tus necesidades */
+  }
+}
+
+@media (min-width: 1200px) {
+  .carousel-caption h3 {
+    bottom: 250px; /* Ajusta el valor según tus necesidades */
+  }
 }
