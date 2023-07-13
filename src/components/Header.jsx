@@ -76,8 +76,11 @@ function Header() {
               }}
             ></div>
             <Carousel.Caption>
-              <h3>First slide label</h3>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+              <h3>{movie.title}</h3>
+              <div className="buttonContainer">
+                <button className="headerButton">Play</button>
+                <button className="headerButton">More Info</button>
+              </div>
             </Carousel.Caption>
           </Carousel.Item>
         ))}

@@ -10,41 +10,64 @@
   padding: 10px;
 }
 
-.carousel-caption h3 {
-  position: absolute;
-  bottom: 60px;
-  left: 150px;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  width: 100%;
-  margin: 0;
+.carousel-caption {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  bottom: 20%; /* Ajuste de posición un 10% más arriba */
 }
+
+.carousel-caption h3 {
+  margin-bottom: 1rem; /* Espacio entre el h3 y los botones */
+}
+
+.headerButton {
+  margin-top: 1rem; /* Espacio entre los botones */
+  background-color: rgba(255, 255, 255, 0.7); /* Color de fondo transparente */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Esquinas redondeadas */
+  padding: 0.5rem 1rem; /* Espacio interno */
+  font-weight: 600; /* Texto ligeramente más grueso */
+}
+.headerButton:last-child {
+  background-color: #404040; /* Color de fondo gris oscuro */
+  color: #ffffff; /* Color del texto blanco */
+}
+.buttonContainer {
+  display: flex;
+  gap: 1rem; /* Espacio entre los botones */
+}
+
 @media (max-width: 600px) {
   .headerContainer {
     padding-bottom: 125%; /* Relación de aspecto 4:5 (5 dividido por 4 multiplicado por 100) */
   }
 }
 @media (max-width: 900px) {
-  .carousel-caption h3 {
+  .carousel-caption h3,
+  .headerButton {
     bottom: 100px; /* Ajusta el valor según tus necesidades */
     left: 150px;
   }
 }
 
 @media (min-width: 901px) and (max-width: 1199px) {
-  .carousel-caption h3 {
+  .carousel-caption h3,
+  .headerButton {
     bottom: 200px; /* Ajusta el valor según tus necesidades */
   }
 }
 
 @media (min-width: 1200px) and (max-width: 1499px) {
-  .carousel-caption h3 {
+  .carousel-caption h3,
+  .headerButton {
     bottom: 300px; /* Ajusta el valor según tus necesidades */
   }
 }
 
 @media (min-width: 1500px) {
-  .carousel-caption h3 {
+  .carousel-caption h3,
+  .headerButton {
     bottom: 400px; /* Ajusta el valor según tus necesidades */
   }
 }
