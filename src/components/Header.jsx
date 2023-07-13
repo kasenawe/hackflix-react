@@ -67,13 +67,12 @@ function Header() {
             <div
               className="d-block headerContainer"
               style={{
-                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.9) 10%, transparent, transparent, rgba(0, 0, 0, 0.9) calc(100% - 15%)), url(https://image.tmdb.org/t/p/original${getBackgroundImage(
-                  movie
-                )})`,
+                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.9) 10%, transparent, transparent, rgba(0, 0, 0, 0.9) calc(100% - 15%)), url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`,
 
                 backgroundRepeat: "no-repeat",
                 backgroundAttachment: "static",
                 backgroundSize: "cover",
+                backgroundPosition: "center",
               }}
             ></div>
             <Carousel.Caption>
@@ -85,15 +84,6 @@ function Header() {
       </Carousel>
     </div>
   );
-}
-function getBackgroundImage(movie) {
-  // Verificar el ancho de la ventana para decidir qué imagen utilizar
-  const windowWidth = window.innerWidth;
-  if (windowWidth <= 600 && movie.poster_path) {
-    return movie.poster_path;
-  } else {
-    return movie.backdrop_path;
-  }
 }
 
 export default Header;
