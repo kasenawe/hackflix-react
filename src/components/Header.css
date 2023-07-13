@@ -19,7 +19,11 @@
   width: 100%;
   margin: 0;
 }
-
+@media (max-width: 600px) {
+  .headerContainer {
+    padding-bottom: 125%; /* Relación de aspecto 4:5 (5 dividido por 4 multiplicado por 100) */
+  }
+}
 @media (max-width: 900px) {
   .carousel-caption h3 {
     bottom: 100px; /* Ajusta el valor según tus necesidades */
