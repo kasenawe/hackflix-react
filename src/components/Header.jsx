@@ -26,7 +26,7 @@ function Header() {
           }
         );
 
-        const randomMovies = getRandomMovies(response.data.results, 3);
+        const randomMovies = getRandomMovies(response.data.results, 5);
         setHeaderMovies(randomMovies);
       } catch (error) {
         console.error(error);
@@ -60,17 +60,22 @@ function Header() {
   }
 
   return (
-    <div className="col-12 headerContainer">
-      <Carousel>
+    <div>
+      <Carousel className="col-12 headerContainer">
         {headerMovies.map((movie) => (
           <Carousel.Item key={movie.id}>
-            <img
-              className="d-block carousel-img"
-              src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
-              alt={movie.title}
-            />
+            <div
+              className="d-block headerContainer"
+              style={{
+                backgroundImage: `linear-gradient(rgba(141, 153, 174, 0.9), rgba(141, 153, 174, 0.1)), url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`,
+                backgroundRepeat: "no-repeat",
+                backgroundAttachment: "fixed",
+                backgroundSize: "cover",
+              }}
+            ></div>
             <Carousel.Caption>
-              <h3>{movie.title}</h3>
+              <h3>First slide label</h3>
+              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
             </Carousel.Caption>
           </Carousel.Item>
         ))}

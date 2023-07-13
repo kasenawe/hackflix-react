@@ -4,7 +4,7 @@ import "./Navbar.css";
 
 function Navbar() {
   return (
-    <Nav className="d-flex gap-5 px-2 justify-content-between align-items-center navbar">
+    <Nav className="d-flex gap-5 px-5 justify-content-between align-items-center navbar">
       <Nav.Item>
         <Link to="/">
           <img
