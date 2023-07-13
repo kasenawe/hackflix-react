@@ -67,9 +67,10 @@ function Header() {
             <div
               className="d-block headerContainer"
               style={{
-                backgroundImage: `linear-gradient(rgba(141, 153, 174, 0.9), rgba(141, 153, 174, 0.1)), url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`,
+                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.9) 10%, transparent, transparent, rgba(0, 0, 0, 0.9) calc(100% - 10%)), url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`,
+
                 backgroundRepeat: "no-repeat",
-                backgroundAttachment: "fixed",
+                backgroundAttachment: "static",
                 backgroundSize: "cover",
               }}
             ></div>
