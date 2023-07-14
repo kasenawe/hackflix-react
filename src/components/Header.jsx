@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 import Carousel from "react-bootstrap/Carousel";
 import { RotatingLines } from "react-loader-spinner";
 import axios from "axios";
@@ -79,11 +80,14 @@ function Header() {
               <h3>{movie.title}</h3>
               <div className="buttonContainer">
                 <button className="headerButton">
-                  <i class="bi bi-play-fill"></i>Play
+                  <i className="bi bi-play-fill"></i>Play
                 </button>
-                <button className="headerButton">
-                  <i class="bi bi-info-circle"></i> More Info
-                </button>
+                <NavLink
+                  to={`/movie/${movie.id}`}
+                  className="headerButton btn-text"
+                >
+                  <i className="bi bi-info-circle"></i> More Info
+                </NavLink>
               </div>
             </Carousel.Caption>
           </Carousel.Item>

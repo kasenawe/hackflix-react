@@ -11,3 +11,56 @@
 .details-img {
   width: 100%;
 }
+
+.list-inline {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.list-inline li {
+  color: white;
+  white-space: nowrap;
+}
+
+.bi-circle-fill {
+  font-size: 12px;
+}
+
+.star-icon {
+  color: yellow;
+  font-size: 20px;
+  margin-right: 5px;
+  vertical-align: sub;
+}
+
+.star-icon::before {
+  content: "\f005";
+  position: absolute;
+  left: 0;
+  color: yellow;
+}
+
+.star-icon::after {
+  content: attr(data-rating);
+  position: relative;
+  margin-left: 1em;
+  color: white;
+}
+
+.credit img,
+.actor img {
+  width: 100px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 3px solid white;
+  margin-right: 10px;
+}
+
+.credit p,
+.actor p {
+  color: white;
+  font-size: 16px;
+}

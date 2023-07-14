@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { RotatingLines } from "react-loader-spinner";
+import { BsStarFill } from "react-icons/bs";
 
 import "./MovieDetails.css";
 
@@ -13,11 +14,32 @@ function MovieDetails() {
   useEffect(() => {
     async function getMovieDetails() {
       try {
-        const response = await axios.get(
+        const movieResponse = await axios.get(
           `https://api.themoviedb.org/3/movie/${params.id}?api_key=73927ca11726d859c91ed5f93b34f84d&language=en-US}`
         );
+        const creditsResponse = await axios.get(
+          `https://api.themoviedb.org/3/movie/${params.id}/credits?api_key=73927ca11726d859c91ed5f93b34f84d`
+        );
 
-        setMovieDetails(response.data);
+        const movieDetails = movieResponse.data;
+        const credits = creditsResponse.data;
+
+        // Obtén el nombre del director
+        const director = credits.crew.find(
+          (member) => member.job === "Director"
+        );
+
+        // Obtén los actores principales (primeros 5)
+        const actors = credits.cast.slice(0, 5).map((actor) => ({
+          name: actor.name,
+          profilePath: actor.profile_path,
+        }));
+
+        setMovieDetails({
+          ...movieDetails,
+          director,
+          actors,
+        });
       } catch (error) {
         setMovieDetails(null);
       } finally {
@@ -57,20 +79,69 @@ function MovieDetails() {
             <div className="col-lg-8">
               <h1 className="detailsText">{movieDetails.title}</h1>
               <p className="overview">
-                {" "}
-                {movieDetails.release_date.slice(0, 4)}
+                ({movieDetails.release_date.slice(0, 4)})
               </p>
-              <p className="overview">{movieDetails.overview}</p>
-              <div className="d-flex flex-row gap-2">
+              <ul className="list-inline">
+                <li> {movieDetails.release_date} </li>
+                <li>
+                  <i className="bi bi-circle-fill"></i>
+                </li>
                 {movieDetails.genres.map((genre, index) => (
                   <React.Fragment key={genre.id}>
-                    <p className="overview">
+                    <li>
                       {genre.name}
-                      {index !== movieDetails.genres.length - 1 &&
-                        (index !== movieDetails.genres.length - 2 ? "," : " &")}
-                    </p>
+                      {index !== movieDetails.genres.length - 1 ? "/" : ""}
+                    </li>
                   </React.Fragment>
                 ))}
+                {console.log(movieDetails)}
+                <li>
+                  <i className="bi bi-circle-fill"></i>
+                </li>
+                <li>{movieDetails.runtime} mins</li>
+                <li>
+                  <i className="bi bi-circle-fill"></i>
+                </li>
+                <li>
+                  <BsStarFill className="star-icon" />
+                  <span className="rating-text">
+                    {movieDetails.vote_average}
+                  </span>
+                </li>
+              </ul>
+              <hr />
+              <p className="overview">{movieDetails.tagline}</p>
+              <hr />
+              <p className="overview">{movieDetails.overview}</p>
+              <hr />
+              <div className="d-flex flex-row gap-2"></div>
+              <div className="credits d-flex gap-5 justify-content-around">
+                <div className="credit">
+                  <h3 className="text-white">Directed by:</h3>
+                  <div className="d-flex flex-column align-items-center">
+                    <img
+                      src={`https://image.tmdb.org/t/p/w200/${movieDetails.director?.profile_path}`}
+                      alt={`Foto de ${movieDetails.director?.name}`}
+                    />
+                    <p>{movieDetails.director?.name}</p>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-white">Starring:</h3>
+                  <ul className="actor-list list-inline">
+                    {movieDetails.actors?.map((actor) => (
+                      <li key={actor.name} className="actor">
+                        <div className="d-flex flex-column align-items-center">
+                          <img
+                            src={`https://image.tmdb.org/t/p/w200/${actor.profilePath}`}
+                            alt={`Foto de ${actor.name}`}
+                          />
+                          <p>{actor.name}</p>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
