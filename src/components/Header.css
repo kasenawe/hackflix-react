@@ -1,7 +1,7 @@
 .headerContainer {
   height: 0;
   position: relative;
-  padding-bottom: 56.25%; /* Relación de aspecto 16:9 (9 dividido por 16 multiplicado por 100) */
+  padding-bottom: 49.25%; /* Relación de aspecto 16:9 (9 dividido por 16 multiplicado por 100) */
 }
 
 .headerText {
@@ -14,7 +14,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  bottom: 20%; /* Ajuste de posición un 10% más arriba */
+  bottom: 10%; /* Ajuste de posición un 10% más arriba */
 }
 
 .carousel-caption h3 {
@@ -24,14 +24,16 @@
 .headerButton {
   margin-top: 1rem; /* Espacio entre los botones */
   background-color: rgba(255, 255, 255, 0.7); /* Color de fondo transparente */
+  color: black;
   border: none; /* Sin borde */
   border-radius: 5px; /* Esquinas redondeadas */
   padding: 0.5rem 1rem; /* Espacio interno */
-  font-weight: 600; /* Texto ligeramente más grueso */
+  font-weight: 700; /* Texto ligeramente más grueso */
 }
 .headerButton:last-child {
   background-color: #404040; /* Color de fondo gris oscuro */
   color: #ffffff; /* Color del texto blanco */
+  opacity: 0.8; /* Efecto de transparencia */
 }
 .buttonContainer {
   display: flex;

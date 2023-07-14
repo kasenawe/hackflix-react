@@ -27,11 +27,11 @@ function Search() {
   }, [inputValue]);
 
   return (
-    <div className="d-flex flex-column align-items-center justify-content-start  bg-dark mt-5">
+    <div className="d-flex flex-column align-items-center justify-content-start mt-5">
       <h1 className="detailsText pt-5">Find your favorites movies here:</h1>
       <form className="form" autoComplete="off">
         <div className="d-flex flex-column gap-4">
-          <label htmlFor="username">Search</label>
+          <label htmlFor="username"></label>
           <input
             type="text"
             name="movie"
@@ -43,7 +43,7 @@ function Search() {
         </div>
       </form>
       {isLoading && (
-        <div className="vh-100 d-flex flex-column align-items-center  bg-dark">
+        <div className="vh-100 d-flex flex-column align-items-center">
           <h3 className="headerText">Loading</h3>
           <RotatingLines
             strokeColor="grey"
@@ -70,7 +70,7 @@ function Search() {
         </>
       ) : (
         moviesData.length > 0 && (
-          <div className="bg-dark text-center emptyMovies">
+          <div className="text-center emptyMovies">
             <p className="pEmpty">No movies found</p>
           </div>
         )

@@ -47,9 +47,7 @@ function Navbar() {
         <Link to="/search">
           <i className="bi bi-search text-white"></i>
         </Link>
-        <Link className="navbar-links" to="/contact">
-          Contact
-        </Link>
+
         <Link className="navbar-links" to="/about-us">
           About
         </Link>

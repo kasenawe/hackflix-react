@@ -78,8 +78,12 @@ function Header() {
             <Carousel.Caption>
               <h3>{movie.title}</h3>
               <div className="buttonContainer">
-                <button className="headerButton">Play</button>
-                <button className="headerButton">More Info</button>
+                <button className="headerButton">
+                  <i class="bi bi-play-fill"></i>Play
+                </button>
+                <button className="headerButton">
+                  <i class="bi bi-info-circle"></i> More Info
+                </button>
               </div>
             </Carousel.Caption>
           </Carousel.Item>
