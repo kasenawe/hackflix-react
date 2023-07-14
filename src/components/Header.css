@@ -5,7 +5,7 @@
 }
 
 .headerText {
-  color: #ffffff; /* Color del texto */
+  color: #ffffff;
   font-size: 3rem;
   padding: 10px;
 }
@@ -52,7 +52,7 @@
 @media (max-width: 900px) {
   .carousel-caption h3,
   .headerButton {
-    bottom: 100px; /* Ajusta el valor según tus necesidades */
+    bottom: 100px;
     left: 150px;
   }
 }
@@ -60,20 +60,20 @@
 @media (min-width: 901px) and (max-width: 1199px) {
   .carousel-caption h3,
   .headerButton {
-    bottom: 200px; /* Ajusta el valor según tus necesidades */
+    bottom: 200px;
   }
 }
 
 @media (min-width: 1200px) and (max-width: 1499px) {
   .carousel-caption h3,
   .headerButton {
-    bottom: 300px; /* Ajusta el valor según tus necesidades */
+    bottom: 300px;
   }
 }
 
 @media (min-width: 1500px) {
   .carousel-caption h3,
   .headerButton {
-    bottom: 400px; /* Ajusta el valor según tus necesidades */
+    bottom: 400px;
   }
 }
