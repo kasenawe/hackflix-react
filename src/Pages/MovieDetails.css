@@ -56,11 +56,19 @@
   border-radius: 8px;
   object-fit: cover;
   border: 3px solid white;
-  margin-right: 10px;
+  margin-right: 5px;
 }
 
 .credit p,
 .actor p {
   color: white;
   font-size: 16px;
+}
+.list-actors {
+  display: flex;
+}
+
+.list-actors li {
+  color: white;
+  white-space: nowrap;
 }
