@@ -67,8 +67,8 @@ function MovieDetails() {
   return (
     <>
       {movieDetails ? (
-        <div className="container m-auto vh-100 d-flex align-items-center pt-5">
-          <div className="row d-flex py-auto">
+        <div className="container m-auto d-flex align-items-center pt-5">
+          <div className="row d-flex mt-5">
             <div className="col-12 col-sm-12 col-md-4">
               <img
                 src={`https://image.tmdb.org/t/p/w500/${movieDetails.poster_path}`}
@@ -117,7 +117,7 @@ function MovieDetails() {
               <div className="container-fluid m-auto">
                 {" "}
                 <div className="credits d-flex flex-row flex-wrap gap-4">
-                  <div className="col-sm-12 order-sm-last col-md-3 credit ">
+                  <div className="order-last col-sm-12 order-sm-last col-md-3 credit ">
                     <h3 className="text-white">Directed by:</h3>
                     <div className="d-flex flex-column align-items-center">
                       <img
