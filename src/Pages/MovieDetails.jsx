@@ -68,7 +68,7 @@ function MovieDetails() {
     <>
       {movieDetails ? (
         <div className="container m-auto vh-100 d-flex align-items-center pt-5">
-          <div className="row d-flex  h-75 py-auto ">
+          <div className="row d-flex py-auto">
             <div className="col-12 col-sm-12 col-md-4">
               <img
                 src={`https://image.tmdb.org/t/p/w500/${movieDetails.poster_path}`}
@@ -77,7 +77,7 @@ function MovieDetails() {
               />
             </div>
             <div className="col-12 col-sm-12 col-md-8">
-              <h1 className="detailsText">{movieDetails.title}</h1>
+              <h1 className="details-title">{movieDetails.title}</h1>
               <p className="overview">
                 ({movieDetails.release_date.slice(0, 4)})
               </p>
@@ -116,8 +116,8 @@ function MovieDetails() {
               <hr />
               <div className="container-fluid m-auto">
                 {" "}
-                <div className="credits d-flex flex-row flex-wrap gap-3">
-                  <div className="col-12 col-sm-12 col-md-4 credit ">
+                <div className="credits d-flex flex-row flex-wrap gap-4">
+                  <div className="col-sm-12 order-sm-last col-md-3 credit ">
                     <h3 className="text-white">Directed by:</h3>
                     <div className="d-flex flex-column align-items-center">
                       <img
@@ -127,19 +127,20 @@ function MovieDetails() {
                       <p>{movieDetails.director?.name}</p>
                     </div>
                   </div>
-                  <div className="col-12 col-sm-12 col-md-4">
+                  <div className="col-sm-12 order-md-last col-md-8 m-auto">
                     <h3 className="text-white">Starring:</h3>
                     <div className="list-actors flex-wrap">
                       {movieDetails.actors?.map((actor) => (
-                        <div className="d-flex flex-column align-items-center ">
-                          <div key={actor.name} className="actor">
-                            <img
-                              src={`https://image.tmdb.org/t/p/w200/${actor.profilePath}`}
-                              alt={`Foto de ${actor.name}`}
-                            />
+                        <div
+                          key={actor.name}
+                          className="d-inline-block actor m-auto text-center"
+                        >
+                          <img
+                            src={`https://image.tmdb.org/t/p/w200/${actor.profilePath}`}
+                            alt={`Foto de ${actor.name}`}
+                          />
 
-                            <p>{actor.name}</p>
-                          </div>
+                          <p>{actor.name}</p>
                         </div>
                       ))}
                     </div>

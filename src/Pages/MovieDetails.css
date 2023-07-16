@@ -1,15 +1,22 @@
-.detailsText {
-  margin-top: 50px;
+.details-title {
+  font-size: 3rem;
   color: white;
+}
+
+@media (max-width: 768px) {
+  .details-title {
+    margin-top: 2rem;
+  }
 }
 
 .overview {
   color: white;
-  font-size: 25px;
+  font-size: 1.2rem;
 }
 
 .details-img {
   width: 100%;
+  max-width: 500px;
 }
 
 .list-inline {
@@ -62,7 +69,7 @@
 .credit p,
 .actor p {
   color: white;
-  font-size: 16px;
+  font-size: 1rem;
 }
 .list-actors {
   display: flex;
