@@ -4,6 +4,8 @@ import Carousel from "react-bootstrap/Carousel";
 import { RotatingLines } from "react-loader-spinner";
 import axios from "axios";
 import "./Header.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Header() {
   const [headerMovies, setHeaderMovies] = useState([]);
@@ -40,6 +42,19 @@ function Header() {
     getHeaderMovies();
   }, []);
 
+  const notifyError = () => {
+    toast.error("Out of the project's scope", {
+      position: "bottom-left",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+  };
+
   function getRandomMovies(movies, count) {
     const shuffled = movies.sort(() => 0.5 - Math.random());
     return shuffled.slice(0, count);
@@ -61,39 +76,42 @@ function Header() {
   }
 
   return (
-    <div>
-      <Carousel className="col-12 headerContainer">
-        {headerMovies.map((movie) => (
-          <Carousel.Item key={movie.id}>
-            <div
-              className="d-block headerContainer"
-              style={{
-                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.9) 10%, transparent, transparent, rgba(0, 0, 0, 0.9) calc(100% - 15%)), url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`,
+    <>
+      <div>
+        <Carousel className="col-12 headerContainer">
+          {headerMovies.map((movie) => (
+            <Carousel.Item key={movie.id}>
+              <div
+                className="d-block headerContainer"
+                style={{
+                  backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.9) 10%, transparent, transparent, rgba(0, 0, 0, 0.9) calc(100% - 15%)), url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`,
 
-                backgroundRepeat: "no-repeat",
-                backgroundAttachment: "static",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            ></div>
-            <Carousel.Caption>
-              <h3>{movie.title}</h3>
-              <div className="buttonContainer">
-                <button className="headerButton">
-                  <i className="bi bi-play-fill"></i>Play
-                </button>
-                <NavLink
-                  to={`/movie/${movie.id}`}
-                  className="headerButton btn-text"
-                >
-                  <i className="bi bi-info-circle"></i> More Info
-                </NavLink>
-              </div>
-            </Carousel.Caption>
-          </Carousel.Item>
-        ))}
-      </Carousel>
-    </div>
+                  backgroundRepeat: "no-repeat",
+                  backgroundAttachment: "static",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              ></div>
+              <Carousel.Caption>
+                <h3>{movie.title}</h3>
+                <div className="buttonContainer">
+                  <button className="headerButton" onClick={notifyError}>
+                    <i className="bi bi-play-fill"></i>Play
+                  </button>
+                  <NavLink
+                    to={`/movie/${movie.id}`}
+                    className="headerButton btn-text"
+                  >
+                    <i className="bi bi-info-circle"></i> More Info
+                  </NavLink>
+                </div>
+              </Carousel.Caption>
+            </Carousel.Item>
+          ))}
+        </Carousel>
+      </div>
+      <ToastContainer />
+    </>
   );
 }
 

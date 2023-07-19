@@ -6,6 +6,7 @@
 .movieHovered {
   transform: scale(1.05); /* Aumenta el tamaño de la imagen en un 10% */
   /* Otros estilos que desees aplicar al contenedor mientras el mouse está sobre la imagen */
+  transition: 400ms;
 }
 
 .movieText {

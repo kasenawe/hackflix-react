@@ -16,28 +16,34 @@ function Movie({ movie, onClick }) {
   };
 
   return (
-    <div className="col-6 col-md-4 col-lg-3 text-center">
-      <img
-        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-        alt=""
-        className={`movieImg mt-4 ${isHovered ? "movieHovered" : ""}`}
+    <>
+      <div
+        className={`col-6 col-md-4 col-lg-3 text-center ${
+          isHovered ? "movieHovered" : ""
+        }`}
         onMouseOver={() => handleMouseOver()}
         onMouseOut={() => handleMouseOut()}
         onClick={() => setShow(true)}
-      />
-      <span>
-        <Rate
-          theme={{
-            algorithm: theme.darkAlgorithm,
-          }}
-          disabled
-          defaultValue={2}
-          value={Math.round(movie.vote_average / 2)}
+      >
+        <img
+          src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+          alt=""
+          className="movieImg mt-4"
         />
-      </span>
-      <span className="movieText"></span>
+        <span>
+          <Rate
+            theme={{
+              algorithm: theme.darkAlgorithm,
+            }}
+            disabled
+            defaultValue={2}
+            value={Math.round(movie.vote_average / 2)}
+          />
+        </span>
+        <span className="movieText"></span>
+      </div>
       <MovieModal show={show} setShow={setShow} movie={movie} />
-    </div>
+    </>
   );
 }
 

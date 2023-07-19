@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { RotatingLines } from "react-loader-spinner";
 import Movie from "../components/Movie";
+import "./Search.css";
 
 function Search() {
   const [moviesData, setMoviesData] = useState([]);
@@ -28,15 +29,15 @@ function Search() {
 
   return (
     <div className="d-flex flex-column align-items-center justify-content-start mt-5">
-      <h1 className="detailsText pt-5">Find your favorites movies here:</h1>
+      <h1 className="search-title pt-5">Find your favorites movies here:</h1>
       <form className="form" autoComplete="off">
         <div className="d-flex flex-column gap-4">
-          <label htmlFor="username"></label>
+          <label htmlFor="search"></label>
           <input
             type="text"
             name="movie"
             id="movie"
-            placeholder="Movie, actor, genre"
+            placeholder="Movies, Titles, people, "
             value={inputValue}
             onChange={(event) => setInputValue(event.target.value)}
           />

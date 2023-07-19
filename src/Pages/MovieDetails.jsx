@@ -24,12 +24,12 @@ function MovieDetails() {
         const movieDetails = movieResponse.data;
         const credits = creditsResponse.data;
 
-        // Obtén el nombre del director
+        // Obtengo el nombre del director
         const director = credits.crew.find(
           (member) => member.job === "Director"
         );
 
-        // Obtén los actores principales (primeros 5)
+        // Obtengo los actores principales (primeros 5)
         const actors = credits.cast.slice(0, 5).map((actor) => ({
           name: actor.name,
           profilePath: actor.profile_path,
@@ -78,7 +78,7 @@ function MovieDetails() {
             </div>
             <div className="col-12 col-sm-12 col-md-8">
               <h1 className="details-title">{movieDetails.title}</h1>
-              <p className="overview">
+              <p className="release-year">
                 ({movieDetails.release_date.slice(0, 4)})
               </p>
               <ul className="list-inline">
@@ -94,7 +94,7 @@ function MovieDetails() {
                     </li>
                   </React.Fragment>
                 ))}
-                {console.log(movieDetails)}
+
                 <li>
                   <i className="bi bi-circle-fill"></i>
                 </li>
@@ -112,6 +112,7 @@ function MovieDetails() {
               <hr />
               <p className="overview">{movieDetails.tagline}</p>
               <hr />
+              <p className="overview-title">Overview: </p>
               <p className="overview">{movieDetails.overview}</p>
               <hr />
               <div className="container-fluid m-auto">
