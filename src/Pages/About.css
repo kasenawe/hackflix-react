@@ -1,6 +1,6 @@
 .about-img-me {
   border: 0.2rem solid rgb(55, 55, 55);
-
+  height: 18rem;
   width: 18rem;
 
   border-radius: 50%;
@@ -36,4 +36,19 @@
 
   margin-top: 10px;
   word-wrap: break-word;
+}
+
+.hr-format {
+  background-color: white !important;
+  height: 1.5px;
+}
+
+.techs-icons {
+  filter: invert(100%) sepia(0%) saturate(10000%) hue-rotate(0deg)
+    brightness(100%);
+}
+
+.techs-texts {
+  color: white;
+  font-size: 0.9rem;
 }
