@@ -50,7 +50,7 @@ function About() {
             with AJAX calls to The Movie Database (TMDB)'s API.
           </p>
         </div>
-        <div className="col-12 col-sm-12 col-md-6 col-lg-4 text-center ">
+        <div className="col-12 col-sm-12 col-md-6 col-lg-4 text-center mt-5">
           <div className="d-flex justify-content-between">
             <div className="d-inline-block justify-content-center">
               <img
