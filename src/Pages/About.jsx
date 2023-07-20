@@ -6,7 +6,7 @@ function About() {
   return (
     <div className="container m-auto d-flex flex-column align-items-center pt-5 py-5">
       <div className="row d-flex mt-5">
-        <div className="col-12 col-sm-12 col-md-6 col-lg-4 d-flex flex-column justify-content-center align-items-center">
+        <div className="col-12 col-sm-12 col-md-6 col-lg-4 d-flex flex-column justify-content-center align-items-center mb-5">
           <img
             src="img/Maximiliano.png"
             alt="Maximiliano"
