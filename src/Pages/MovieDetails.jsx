@@ -118,7 +118,7 @@ function MovieDetails() {
               <div className="container-fluid m-auto">
                 {" "}
                 <div className="credits d-flex flex-row flex-wrap gap-4">
-                  <div className="order-last col-sm-12 order-sm-last col-md-3 credit ">
+                  <div className="order-last col-sm-12 order-sm-last col-md-3 credit">
                     <h3 className="text-white">Directed by:</h3>
                     <div className="d-flex flex-column align-items-center">
                       <img

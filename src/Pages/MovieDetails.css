@@ -83,6 +83,13 @@
   color: white;
   font-size: 1rem;
 }
+
+@media (max-width: 575px) {
+  .credit {
+    width: 100%;
+  }
+}
+
 .list-actors {
   display: flex;
 }
