@@ -29,11 +29,38 @@
   border-radius: 5px; /* Esquinas redondeadas */
   padding: 0.5rem 1rem; /* Espacio interno */
   font-weight: 700; /* Texto ligeramente más grueso */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 .headerButton:last-child {
   background-color: #404040; /* Color de fondo gris oscuro */
   color: #ffffff; /* Color del texto blanco */
   opacity: 0.8; /* Efecto de transparencia */
+}
+
+.headerButton:hover {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.9
+  ); /* Color de fondo más claro al hacer hover */
+  color: black; /* Color del texto al hacer hover */
+}
+
+/* Efecto de hover para el botón de "More Info" */
+.headerButton:last-child:hover {
+  background-color: #303030; /* Color de fondo gris oscuro más oscuro al hacer hover */
+  color: #ffffff; /* Color del texto al hacer hover */
+  opacity: 1; /* Eliminamos el efecto de transparencia al hacer hover */
+}
+.headerButton.clicked {
+  background-color: rgba(
+    255,
+    0,
+    0,
+    0.9
+  ); /* Cambiamos el color de fondo al hacer clic */
+  color: white; /* Cambiamos el color del texto al hacer clic */
 }
 .buttonContainer {
   display: flex;

@@ -1,15 +1,39 @@
+import { Link } from "react-router-dom";
+
 import "./About.css";
 
 function About() {
   return (
     <div className="container m-auto d-flex flex-column align-items-center pt-5 py-5">
       <div className="row d-flex mt-5">
-        <div className="col-12 col-sm-12 col-md-6 col-lg-4 d-flex justify-content-center">
+        <div className="col-12 col-sm-12 col-md-6 col-lg-4 d-flex flex-column justify-content-center align-items-center">
           <img
             src="img/Maximiliano.png"
             alt="Maximiliano"
             className="about-img-me"
           />
+          <div className="d-flex mt-3 w-100 justify-content-center gap-4">
+            <Link to="https://github.com/kasenawe" target="_blank">
+              {" "}
+              <img
+                src="img/github-v.svg"
+                alt="github"
+                className="about-icons"
+                style={{ height: "50px", width: "auto", color: "white" }}
+              />
+            </Link>
+            <Link
+              to="https://www.linkedin.com/in/maximiliano-quintana-tabarez/"
+              target="_blank"
+            >
+              <img
+                src="img/linkedin.svg"
+                alt="github"
+                className="about-icons"
+                style={{ height: "50px", width: "auto", color: "white" }}
+              />
+            </Link>
+          </div>
         </div>
         <div className="col-12 col-sm-12 col-md-6 col-lg-8">
           <h1 className="about-title">About me</h1>
@@ -78,7 +102,7 @@ function About() {
                 <img
                   src="img/html5-logo-svgrepo-com.svg"
                   alt="html5"
-                  className="techs-icons"
+                  className="about-icons"
                   style={{ height: "50px", width: "auto", color: "white" }}
                 />
                 <h5 className="techs-texts">HTML5</h5>
@@ -86,8 +110,8 @@ function About() {
               <div>
                 <img
                   src="img/css-4.svg"
-                  alt="html5"
-                  className="techs-icons"
+                  alt="css"
+                  className="about-icons"
                   style={{ height: "50px", width: "auto", color: "white" }}
                 />
                 <h5 className="techs-texts">CSS</h5>
@@ -95,8 +119,8 @@ function About() {
               <div>
                 <img
                   src="img/logo-javascript-svgrepo-com.svg"
-                  alt="html5"
-                  className="techs-icons"
+                  alt="javascript"
+                  className="about-icons"
                   style={{ height: "50px", width: "auto", color: "white" }}
                 />
                 <h5 className="techs-texts">JavaScript</h5>
@@ -104,8 +128,8 @@ function About() {
               <div>
                 <img
                   src="img/logo-react-svgrepo-com.svg"
-                  alt="html5"
-                  className="techs-icons"
+                  alt="react"
+                  className="about-icons"
                   style={{ height: "50px", width: "auto", color: "white" }}
                 />
                 <h5 className="techs-texts">React</h5>

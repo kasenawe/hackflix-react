@@ -11,4 +11,25 @@
 
 .button-up {
   font-size: 2rem;
+  cursor: pointer;
+}
+.button-up:hover {
+  color: orange !important; /* Cambiar el color del icono al hacer hover */
+}
+
+.button-up.clicked {
+  animation: bounce 0.5s;
+  color: red !important;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }

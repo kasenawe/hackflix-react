@@ -10,6 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 function Header() {
   const [headerMovies, setHeaderMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [isClicked, setIsClicked] = useState(false);
 
   useEffect(() => {
     async function getHeaderMovies() {
@@ -54,7 +55,17 @@ function Header() {
       theme: "dark",
     });
   };
+  const handleClick = () => {
+    if (!isClicked) {
+      // Evitar que se active el temporizador si ya se ha hecho clic previamente
+      setIsClicked(true); // Establece isClicked como true al hacer clic
+      notifyError();
 
+      setTimeout(() => {
+        setIsClicked(false);
+      }, 200);
+    }
+  };
   function getRandomMovies(movies, count) {
     const shuffled = movies.sort(() => 0.5 - Math.random());
     return shuffled.slice(0, count);
@@ -95,7 +106,10 @@ function Header() {
               <Carousel.Caption>
                 <h3>{movie.title}</h3>
                 <div className="buttonContainer">
-                  <button className="headerButton" onClick={notifyError}>
+                  <button
+                    className={`headerButton ${isClicked ? "clicked" : ""}`}
+                    onClick={handleClick}
+                  >
                     <i className="bi bi-play-fill"></i>Play
                   </button>
                   <NavLink
