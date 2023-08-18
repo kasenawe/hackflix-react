@@ -43,9 +43,10 @@ function Navbar() {
           ></img>
         </Link>
       </Nav.Item>
-      <Nav.Item className="d-flex gap-3 me-2">
+      <Nav.Item className="d-flex gap-5 me-2 align-items-center">
         <Link to="/search">
-          <i className="bi bi-search text-white"></i>
+          {" "}
+          <i className="bi bi-search text-white navbar-search"></i>
         </Link>
 
         <Link className="navbar-links" to="/about-us">
