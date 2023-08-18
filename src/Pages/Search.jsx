@@ -28,8 +28,10 @@ function Search() {
   }, [inputValue]);
 
   return (
-    <div className="d-flex flex-column align-items-center justify-content-start mt-5">
-      <h1 className="search-title pt-5">Find your favorites movies here:</h1>
+    <div className="d-flex flex-column align-items-center justify-content-start mt-5 px-5">
+      <h1 className="search-title  text-center pt-5">
+        Find your favorites movies here:
+      </h1>
       <form className="form" autoComplete="off">
         <div className="d-flex flex-column gap-4">
           <label htmlFor="search"></label>

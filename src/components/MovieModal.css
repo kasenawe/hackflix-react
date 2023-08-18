@@ -28,3 +28,13 @@
   padding: 0.5rem 1rem; /* Espacio interno */
   font-weight: 700; /* Texto ligeramente más grueso */
 }
+
+.btn-modal:hover {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.9
+  ); /* Color de fondo más claro al hacer hover */
+  color: black; /* Color del texto al hacer hover */
+}
